@@ -1,0 +1,49 @@
+---
+title: "Project oriented workflows"
+author: "Shannon Pileggi"
+footer:  "[Project oriented workflows]()"
+logo: "img/wtf-logo-square-transparent.png"
+format: 
+  revealjs: 
+    theme: [night, slides.scss]
+    highlight-style: a11y
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Getting started
+
+```{r}
+library(countdown)
+```
+
+```{r font-awesome-color}
+# fill for font awesome icons
+fa_fill <- "#C7B41D"
+```
+
+## Licensing
+
+
+<br> 
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
+
+## Checklist
+
+<br>
+
+`r fontawesome::fa("check", fill = fa_fill)` R installed?
+Pretty recent?
+
+     Current version 4.2.0
+
+`r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
+
+     I'm on 2022.02.3+492
+
+## Additional resources {.smaller}
