@@ -17,6 +17,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -341,6 +404,13 @@
 <p><br></p>
 <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> (CC BY-SA4.0).</p>
 </section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><br> <br></p>
+<div class="r-fit-text">
+<p><a href="https://github.com/rstudio-conf-2022/wtf-rstats">rstd.io/wtf-2022-rsc</a></p>
+</div>
+</section>
 <section id="checklist" class="slide level2">
 <h2>Checklist</h2>
 <p><br></p>
@@ -348,9 +418,140 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp; Current version 4.2.0</p>
 <p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#C7B41D;overflow:visible;position:relative;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg> RStudio installed?</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; I’m on 2022.02.3+492</p>
+</section></section>
+<section>
+<section id="be-organized" class="title-slide slide level1 center">
+<h1>Be organized</h1>
+
 </section>
-<section id="additional-resources" class="slide level2 smaller">
-<h2>Additional resources</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><br></p>
+<div class="center-x r-fit-text">
+<p>What <em>Did</em> They Forget <br> to Teach You?</p>
+</div>
+</section>
+<section id="section-2" class="slide level2" data-background-image="img/everything-else.PNG">
+<h2></h2>
+</section>
+<section id="section-3" class="slide level2" data-background-image="img/deep_thoughts.PNG">
+<h2></h2>
+</section>
+<section id="be-organized-1" class="slide level2">
+<h2>Be organized</h2>
+<p><br></p>
+<div class="r-fit-text">
+<p>Do this as you go, not “tomorrow”.</p>
+</div>
+<p><br></p>
+<div class="r-fit-text">
+<p>But also don’t fret over past mistakes - <br> raise the bar for <em>new</em> work.</p>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/beer-house.png"></p>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:46%;">
+<p><img data-src="img/beer-organized.png" class="fragment"></p>
+</div>
+</div>
+</section>
+<section id="be-organized-2" class="slide level2">
+<h2>Be organized</h2>
+<p><br></p>
+<p><br></p>
+<div class="r-fit-text">
+<p>self-explaining &gt;&gt;&gt; wordy, needy explainers</p>
+</div>
+</section>
+<section id="be-organized-3" class="slide level2">
+<h2>Be organized</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="img/packages-report-example.png"></p>
+</div><div class="column" style="width:10%;">
+<p><br></p>
+<p><br></p>
+<p><code>&gt;&gt;&gt;</code></p>
+</div><div class="column" style="width:45%;">
+<p><br></p>
+<p><br></p>
+<p>file salad <br> + an out of date README</p>
+</div>
+</div>
+</section>
+<section id="good-enough-practices-in-scientific-computing" class="slide level2">
+<h2>Good enough practices in scientific computing</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="img/airplane-duct.png"></p>
+</div><div class="column" style="width:2%;">
+
+</div><div class="fragment column" style="width:53%;">
+<p><em>PLOS Computational Biology</em> (2017)</p>
+<p><brshort></brshort></p>
+<p>Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal</p>
+<p><brshort></brshort></p>
+<p><a href="https://doi.org/10.1371/journal.pcbi.1005510" class="uri">https://doi.org/10.1371/journal.pcbi.1005510</a></p>
+<p><brshort></brshort></p>
+<p><a href="http://bit.ly/good-enuff" class="uri">http://bit.ly/good-enuff</a></p>
+</div>
+</div>
+<p><br></p>
+</section></section>
+<section>
+<section id="practical-example" class="title-slide slide level1 center">
+<h1>Practical Example</h1>
+
+</section>
+<section id="explore-your-r-installation" class="slide level2">
+<h2>🧐 Explore your R installation</h2>
+<h4 id="r-package">R package</h4>
+<ul>
+<li>the natural unit for distributing R code</li>
+</ul>
+<p><brshort></brshort></p>
+<h4 id="base-r">base R</h4>
+<ul>
+<li><p>14 base + 15 recommended packages</p></li>
+<li><p>ships with all binary distributions of R</p></li>
+</ul>
+<p><brshort></brshort></p>
+<h4 id="have-you-ever-used-lattice">Have you ever used <code>lattice</code>? 🤷</h4>
+<ul>
+<li><p>it came with your installation</p></li>
+<li><p><code>library(lattice)</code></p></li>
+</ul>
+</section>
+<section id="additional-packages" class="slide level2">
+<h2>Additional packages</h2>
+<p><brshort></brshort></p>
+<h4 id="cran">CRAN</h4>
+<p>~15k packages</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install from CRAN</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># attach</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(devtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><brshort></brshort></p>
+</div>
+<h4 id="github">GitHub</h4>
+<p>??? packages</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install via devtools</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rstats-wtf/wtfdbg"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># attach</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">library</span>(wtfdbg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><brshort></brshort></p>
+<p>*we’ll use <code>wtfdbg</code> later in <em>Debugging</em></p>
 
 <img src="img/wtf-logo-square-transparent.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="">Project oriented workflows</a></p>

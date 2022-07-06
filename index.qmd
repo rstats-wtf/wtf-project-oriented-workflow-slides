@@ -26,12 +26,21 @@ library(countdown)
 fa_fill <- "#C7B41D"
 ```
 
+
 ## Licensing
 
 
 <br> 
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
+
+##
+
+<br> <br>
+
+::: r-fit-text
+[rstd.io/wtf-2022-rsc](https://github.com/rstudio-conf-2022/wtf-rstats)
+:::
 
 ## Checklist
 
@@ -46,4 +55,192 @@ Pretty recent?
 
      I'm on 2022.02.3+492
 
-## Additional resources {.smaller}
+
+# Be organized
+
+##
+
+<br>
+
+::: {.center-x .r-fit-text} 
+What _Did_ They Forget <br>
+to Teach You?
+:::
+
+##  {background-image="img/everything-else.PNG"}
+
+##  {background-image="img/deep_thoughts.PNG"}
+
+
+## Be organized
+
+<br>
+
+
+::: {.r-fit-text}
+Do this as you go, not "tomorrow".
+:::
+
+<br>
+
+::: {.r-fit-text}
+But also don't fret over past mistakes - <br>
+raise the bar for _new_ work.
+:::
+
+
+
+##
+
+::: columns
+::: {.column width="50%"}
+![](img/beer-house.png)
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="46%"}
+![](img/beer-organized.png){.fragment}
+:::
+:::
+
+
+## Be organized
+
+<br>
+
+<br>
+
+::: {.r-fit-text} 
+self-explaining >>> wordy, needy explainers
+:::
+
+
+## Be organized
+
+::: columns
+::: {.column width="45%"}
+![](img/packages-report-example.png)
+:::
+
+::: {.column width="10%"}
+
+<br>
+
+<br> 
+
+`>>>`
+
+:::
+
+::: {.column width="45%"}
+
+<br>
+
+<br> 
+
+file salad <br>
++ an out of date README
+:::
+:::
+
+## Good enough practices in scientific computing
+
+<br>
+
+::: columns
+::: {.column width="45%"}
+![](img/airplane-duct.png)
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.fragment .column width="53%"}
+
+
+_PLOS Computational Biology_ (2017)
+
+<brshort>
+
+Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
+
+<brshort>
+
+<https://doi.org/10.1371/journal.pcbi.1005510>
+
+<brshort>
+
+<http://bit.ly/good-enuff>
+
+:::
+:::
+
+<br>
+
+# Practical Example
+
+## 🧐 Explore your R installation
+
+
+#### R package 
+
+ * the natural unit for distributing R code
+
+<brshort>
+
+. . .
+
+#### base R 
+ 
+ * 14 base + 15 recommended packages
+ 
+ * ships with all binary distributions of R
+
+<brshort>
+
+. . .
+
+
+#### Have you ever used `lattice`? 🤷
+
+ * it came with your installation
+
+ * `library(lattice)`
+ 
+## Additional packages
+
+<brshort>
+
+
+#### CRAN 
+
+~15k packages
+
+```{r, eval = FALSE, echo = TRUE}
+# install from CRAN
+install.packages("devtools")
+# attach
+library(devtools)
+```
+
+
+. . .
+
+<brshort>
+
+#### GitHub 
+
+??? packages
+
+```{r, eval = FALSE, echo = TRUE}
+# install via devtools
+devtools::install_github("rstats-wtf/wtfdbg")
+# attach
+library(wtfdbg)
+```
+
+<brshort>
+
+*we'll use `wtfdbg` later in _Debugging_
