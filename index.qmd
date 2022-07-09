@@ -26,15 +26,13 @@ library(countdown)
 fa_fill <- "#C7B41D"
 ```
 
-
 ## Licensing
 
-
-<br> 
+<br>
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
 
-##
+## 
 
 <br> <br>
 
@@ -55,56 +53,38 @@ Pretty recent?
 
      I'm on 2022.02.3+492
 
-
 # Be organized
 
-##
+## 
 
 <br>
 
-::: {.center-x .r-fit-text} 
-What _Did_ They Forget <br>
-to Teach You?
+::: {.center-x .r-fit-text}
+What *Did* They Forget <br> to Teach You?
 :::
 
 ##  {background-image="img/everything-else.PNG"}
 
 ##  {background-image="img/deep_thoughts.PNG"}
 
-
-## Be organized
-
-<br>
-
-
-::: {.r-fit-text}
-Do this as you go, not "tomorrow".
-:::
-
-<br>
-
-::: {.r-fit-text}
-But also don't fret over past mistakes - <br>
-raise the bar for _new_ work.
-:::
-
-
-
-##
+## Be organized as you go, <br> not "tomorrow"
 
 ::: columns
 ::: {.column width="50%"}
+Don't fret over past mistakes.
+
 ![](img/beer-house.png)
 :::
 
 ::: {.column width="4%"}
 :::
 
-::: {.column width="46%"}
-![](img/beer-organized.png){.fragment}
-:::
-:::
+::: {.column .fragment width="46%"}
+Raise the bar for new work.
 
+![](img/beer-organized.png)
+:::
+:::
 
 ## Be organized
 
@@ -112,10 +92,9 @@ raise the bar for _new_ work.
 
 <br>
 
-::: {.r-fit-text} 
-self-explaining >>> wordy, needy explainers
+::: r-fit-text
+self-explaining \>\>\> wordy, needy explainers
 :::
-
 
 ## Be organized
 
@@ -125,23 +104,19 @@ self-explaining >>> wordy, needy explainers
 :::
 
 ::: {.column width="10%"}
+<br>
 
 <br>
 
-<br> 
-
 `>>>`
-
 :::
 
 ::: {.column width="45%"}
+<br>
 
 <br>
 
-<br> 
-
-file salad <br>
-+ an out of date README
+file salad <br> + an out of date README
 :::
 :::
 
@@ -158,9 +133,7 @@ file salad <br>
 :::
 
 ::: {.fragment .column width="53%"}
-
-
-_PLOS Computational Biology_ (2017)
+*PLOS Computational Biology* (2017)
 
 <brshort>
 
@@ -173,50 +146,40 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
 <brshort>
 
 <http://bit.ly/good-enuff>
-
 :::
 :::
-
-<br>
 
 # Practical Example
 
-## 🧐 Explore your R installation
+## Your R installation
 
+::: {.fragment fragment-index="1"}
+#### R packages
 
-#### R package 
+-   the natural unit for distributing R code
+:::
 
- * the natural unit for distributing R code
+::: {.fragment fragment-index="2"}
+#### base R
 
-<brshort>
+-   14 base + 15 recommended packages
 
-. . .
+-   ships with all binary distributions of R
+:::
 
-#### base R 
- 
- * 14 base + 15 recommended packages
- 
- * ships with all binary distributions of R
+::: {.fragment fragment-index="3"}
+#### Have you ever used lattice?
 
-<brshort>
+-   it came with your installation
 
-. . .
+-   `library(lattice)`
+:::
 
-
-#### Have you ever used `lattice`? 🤷
-
- * it came with your installation
-
- * `library(lattice)`
- 
 ## Additional packages
 
-<brshort>
+#### CRAN
 
-
-#### CRAN 
-
-~15k packages
+\~18k packages
 
 ```{r, eval = FALSE, echo = TRUE}
 # install from CRAN
@@ -225,12 +188,9 @@ install.packages("devtools")
 library(devtools)
 ```
 
-
-. . .
-
 <brshort>
 
-#### GitHub 
+#### GitHub
 
 ??? packages
 
@@ -243,4 +203,332 @@ library(wtfdbg)
 
 <brshort>
 
-*we'll use `wtfdbg` later in _Debugging_
+*we'll use `wtfdbg` later in **Debugging***
+
+## Where do packages live locally?
+
+<br>
+
+By default, in the default library
+
+`.Library`
+
+<br>
+
+All libraries for the current session
+
+`.libPaths()`
+
+<br>
+
+All installed packages
+
+`installed.packages()`
+
+## 🧐 Explore your R installation
+
+<br>
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("usethis")
+library(usethis)
+use_course("rstats-wtf/wtf-explore-libraries")
+```
+
+<brshort>
+
+Read the `README.md` to get started.
+
+<br>
+
+*Stay relaxed.* 🧘 *We'll be refining this code. Leave rough edges and gaps to address later.*
+
+```{r}
+countdown(
+  minutes = 10,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::: footer
+Having trouble with use_course()?<
+br> You can also download from <br> <https://github.com/rstats-wtf/wtf-explore-libraries>
+:::
+
+# Project-oriented workflows
+
+## Adopt a project-oriented workflow
+
+<br>
+
+::: columns
+::: {.column width="48%"}
+### Why
+
+* work on more than 1 thing at a time
+
+* collaborate, communicate, distribute
+
+* start and stop
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column .fragment width="48%"}
+### How
+
+* dedicated directory
+
+* RStudio <ins>**P**</ins>roject
+
+* Git repo, probably syncing to a remote
+:::
+:::
+
+
+## If the first line of your script is
+
+<br>
+
+```{r, eval=FALSE, echo=TRUE}
+setwd("C:\Users\jenny\path\that\only\I\have")
+rm(list = ls())
+```
+
+<br>
+
+Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
+
+<br>
+
+::: {.fragment fragment-index=1}
+
+### Project-oriented workflow designs this away 🙌
+
+* <https://www.tidyverse.org/articles/2017/12/workflow-vs-script/>
+
+* <https://rstats.wtf/project-oriented-workflow.html>
+
+:::
+
+
+
+## Which persist after rm(list = ls())?
+
+
+| Option                               |Persists? |
+|--------------------------------------|------|
+| A. library(dplyr)                    |  `r fontawesome::fa("check", fill = "#343838")`    |
+| B. summary \<- head                  |  `r fontawesome::fa("xmark", fill = "#343838")`    |
+| C. options(stringsAsFactors = FALSE) |  `r fontawesome::fa("check", fill = "#343838")`    |
+| D. Sys.setenv(LANGUAGE = "fr)        |  `r fontawesome::fa("check", fill = "#343838")`    |
+| E. x \<- 1:5                         |  `r fontawesome::fa("xmark", fill = "#343838")`    |
+| F. attach(iris)                      |  `r fontawesome::fa("check", fill = "#343838")`    |
+
+
+```{r}
+countdown(
+  minutes = 2
+  )
+```
+
+## Which persist after rm(list = ls())?
+
+| Option                               |Persists? |
+|--------------------------------------|------|
+| A. library(dplyr)                    |  `r fontawesome::fa("check", fill = fa_fill)`    |
+| B. summary \<- head                  |  `r fontawesome::fa("xmark", fill = "white")`    |
+| C. options(stringsAsFactors = FALSE) |  `r fontawesome::fa("check", fill = fa_fill)`    |
+| D. Sys.setenv(LANGUAGE = "fr)        |  `r fontawesome::fa("check", fill = fa_fill)`    |
+| E. x \<- 1:5                         |  `r fontawesome::fa("xmark", fill = "white")`    |
+| F. attach(iris)                      |  `r fontawesome::fa("check", fill = fa_fill)`    |
+
+
+
+## What does it mean to be an RStudio <ins>**P**</ins>roject?
+
+<br>
+
+RStudio leaves notes to itself in foo.Rproj
+
+. . .
+
+<br>
+
+Open Project = dedicated instance of RStudio
+
+* dedicated R process
+
+* file browser pointed at Project directory
+
+* working directory set to Project directory
+
+
+
+## Many projects open
+
+<br>
+
+![](img/many-projects.jpg)
+
+
+
+## Use a "blank slate"
+
+
+<br>
+
+
+```{r, eval=FALSE, echo=TRUE}
+usethis::use_blank_slate()
+```
+
+
+<br>
+
+OR
+
+<br>
+
+Tools -> Global Options
+
+![](img/workspace.PNG)
+
+# Restart R often
+<br>
+
+::: columns
+::: {.column width="48%"}
+Session -> Restart R
+
+![](img/restart.jpg)
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+
+
+Windows
+
+* Ctrl + Shift + F10
+
+Mac
+
+* Cmd + Shift + 0 
+
+* Cmd + Shift + F10 
+
+
+:::
+:::
+
+
+## Project intiation: the local case
+
+1. New folder + make it an RStudio Project
+
+* `usethis::create_project("~/i_am_new")`
+
+* RStudio -> New Project... -> New Directory -> New Project
+
+. . .
+
+2. Make existing folder into an RStudio Project
+
+* `usethis::create_project("~/i_exist")`
+
+* RStudio -> New Project... -> Existing Directory
+
+. . .
+
+::: {.question}
+Try option 2 now for wtf-explore-libraries.
+:::
+
+```{r}
+countdown(
+  minutes = 2
+  )
+```
+
+# Safe paths
+
+##  {background-image="img/deep_thoughts.PNG"}
+
+## Practice "safe paths"
+
+<br>
+
+relative to a `stable base`
+
+<br>
+
+use `file system functions`
+
+&nbsp; &nbsp; not paste(), strsplit(), etc.
+
+## Do you know where your files are?
+
+![](img/street-sign.png)
+
+What is a working directory?
+
+::: notes
+
+Working directory is associated with a specific process or running application.
+
+
+For a newly launched process or application instance, the working directory (probably? usually?) 
+defaults to user’s home directory. Or perhaps the application consults a config file
+to set the working directory at launch time. This is sort of how I would describe launching 
+an RStudio Project. 
+
+“Working directory” as a concept  is not comparable to “home directory”. “Home directory” is a static, persistent thing. 
+
+:::
+
+## tweet example
+
+## Packages with file system functions
+
+<br>
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("fs")
+```
+
+`fs` = file path handling
+
+<br>
+. . .
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("here")
+```
+
+`here` = project-relative paths
+
+## here
+
+![](img/here.png)
+
+::: footer
+Artwork by [\@allison_horst](https://twitter.com/allison_horst).
+:::
+
+
+# Names matter
+
+# File organization
