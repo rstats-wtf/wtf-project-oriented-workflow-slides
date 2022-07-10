@@ -93,7 +93,7 @@ Raise the bar for new work.
 <br>
 
 ::: r-fit-text
-self-explaining \>\>\> wordy, needy explainers
+self-explaining `>>>` wordy, needy explainers
 :::
 
 ## Be organized
@@ -154,32 +154,36 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
 ## Your R installation
 
 ::: {.fragment fragment-index="1"}
-#### R packages
 
--   the natural unit for distributing R code
+**R packages**
+
+* the natural unit for distributing R code
+
 :::
 
 ::: {.fragment fragment-index="2"}
-#### base R
 
--   14 base + 15 recommended packages
+**base R**
 
--   ships with all binary distributions of R
+* 14 base + 15 recommended packages
+
+* ships with all binary distributions of R
+
 :::
 
 ::: {.fragment fragment-index="3"}
-#### Have you ever used lattice?
 
--   it came with your installation
+**Have you ever used lattice?**
 
--   `library(lattice)`
+* it came with your installation
+
+* `library(lattice)`
+
 :::
 
 ## Additional packages
 
-#### CRAN
-
-\~18k packages
+**CRAN, \~18k packages**
 
 ```{r, eval = FALSE, echo = TRUE}
 # install from CRAN
@@ -188,11 +192,11 @@ install.packages("devtools")
 library(devtools)
 ```
 
-<brshort>
+<br>
 
-#### GitHub
+::: {.fragment}
 
-??? packages
+**GitHub, ??? packages**
 
 ```{r, eval = FALSE, echo = TRUE}
 # install via devtools
@@ -203,7 +207,11 @@ library(wtfdbg)
 
 <brshort>
 
-*we'll use `wtfdbg` later in **Debugging***
+:::
+
+::: footer
+we'll use `wtfdbg` later in _Debugging_
+:::
 
 ## Where do packages live locally?
 
@@ -260,8 +268,8 @@ countdown(
 ```
 
 ::: footer
-Having trouble with use_course()?<
-br> You can also download from <br> <https://github.com/rstats-wtf/wtf-explore-libraries>
+Having trouble with use_course()?\<
+br\> You can also download from <br> <https://github.com/rstats-wtf/wtf-explore-libraries>
 :::
 
 # Project-oriented workflows
@@ -274,11 +282,11 @@ br> You can also download from <br> <https://github.com/rstats-wtf/wtf-explore-l
 ::: {.column width="48%"}
 ### Why
 
-* work on more than 1 thing at a time
+-   work on more than 1 thing at a time
 
-* collaborate, communicate, distribute
+-   collaborate, communicate, distribute
 
-* start and stop
+-   start and stop
 :::
 
 ::: {.column width="4%"}
@@ -287,16 +295,15 @@ br> You can also download from <br> <https://github.com/rstats-wtf/wtf-explore-l
 ::: {.column .fragment width="48%"}
 ### How
 
-* dedicated directory
+-   dedicated directory
 
-* RStudio <ins>**P**</ins>roject
+-   RStudio <ins>**P**</ins>roject
 
-* Git repo, probably syncing to a remote
+-   Git repo, probably syncing to a remote
 :::
 :::
 
-
-## If the first line of your script is
+## If the top of your script is
 
 <br>
 
@@ -311,30 +318,31 @@ Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
 
 <br>
 
-::: {.fragment fragment-index=1}
+::: {.fragment fragment-index="1"}
 
-### Project-oriented workflow designs this away 🙌
+Project-oriented workflow designs this away. 🙌
 
-* <https://www.tidyverse.org/articles/2017/12/workflow-vs-script/>
-
-* <https://rstats.wtf/project-oriented-workflow.html>
 
 :::
 
+::: footer
 
+<https://www.tidyverse.org/articles/2017/12/workflow-vs-script/>
+
+<https://rstats.wtf/project-oriented-workflow.html>
+
+:::
 
 ## Which persist after rm(list = ls())?
 
-
-| Option                               |Persists? |
-|--------------------------------------|------|
-| A. library(dplyr)                    |  `r fontawesome::fa("check", fill = "#343838")`    |
-| B. summary \<- head                  |  `r fontawesome::fa("xmark", fill = "#343838")`    |
-| C. options(stringsAsFactors = FALSE) |  `r fontawesome::fa("check", fill = "#343838")`    |
-| D. Sys.setenv(LANGUAGE = "fr)        |  `r fontawesome::fa("check", fill = "#343838")`    |
-| E. x \<- 1:5                         |  `r fontawesome::fa("xmark", fill = "#343838")`    |
-| F. attach(iris)                      |  `r fontawesome::fa("check", fill = "#343838")`    |
-
+| Option                               | Persists?                                      |
+|---------------------------------------------------------|---------------|
+| A. library(dplyr)                    | `r fontawesome::fa("check", fill = "#343838")` |
+| B. summary \<- head                  | `r fontawesome::fa("xmark", fill = "#343838")` |
+| C. options(stringsAsFactors = FALSE) | `r fontawesome::fa("check", fill = "#343838")` |
+| D. Sys.setenv(LANGUAGE = "fr)        | `r fontawesome::fa("check", fill = "#343838")` |
+| E. x \<- 1:5                         | `r fontawesome::fa("xmark", fill = "#343838")` |
+| F. attach(iris)                      | `r fontawesome::fa("check", fill = "#343838")` |
 
 ```{r}
 countdown(
@@ -344,16 +352,14 @@ countdown(
 
 ## Which persist after rm(list = ls())?
 
-| Option                               |Persists? |
-|--------------------------------------|------|
-| A. library(dplyr)                    |  `r fontawesome::fa("check", fill = fa_fill)`    |
-| B. summary \<- head                  |  `r fontawesome::fa("xmark", fill = "white")`    |
-| C. options(stringsAsFactors = FALSE) |  `r fontawesome::fa("check", fill = fa_fill)`    |
-| D. Sys.setenv(LANGUAGE = "fr)        |  `r fontawesome::fa("check", fill = fa_fill)`    |
-| E. x \<- 1:5                         |  `r fontawesome::fa("xmark", fill = "white")`    |
-| F. attach(iris)                      |  `r fontawesome::fa("check", fill = fa_fill)`    |
-
-
+| Option                               | Persists?                                    |
+|---------------------------------------------------------|---------------|
+| A. library(dplyr)                    | `r fontawesome::fa("check", fill = fa_fill)` |
+| B. summary \<- head                  | `r fontawesome::fa("xmark", fill = "white")` |
+| C. options(stringsAsFactors = FALSE) | `r fontawesome::fa("check", fill = fa_fill)` |
+| D. Sys.setenv(LANGUAGE = "fr)        | `r fontawesome::fa("check", fill = fa_fill)` |
+| E. x \<- 1:5                         | `r fontawesome::fa("xmark", fill = "white")` |
+| F. attach(iris)                      | `r fontawesome::fa("check", fill = fa_fill)` |
 
 ## What does it mean to be an RStudio <ins>**P**</ins>roject?
 
@@ -367,13 +373,11 @@ RStudio leaves notes to itself in foo.Rproj
 
 Open Project = dedicated instance of RStudio
 
-* dedicated R process
+-   dedicated R process
 
-* file browser pointed at Project directory
+-   file browser pointed at Project directory
 
-* working directory set to Project directory
-
-
+-   working directory set to Project directory
 
 ## Many projects open
 
@@ -381,18 +385,13 @@ Open Project = dedicated instance of RStudio
 
 ![](img/many-projects.jpg)
 
-
-
 ## Use a "blank slate"
 
-
 <br>
-
 
 ```{r, eval=FALSE, echo=TRUE}
 usethis::use_blank_slate()
 ```
-
 
 <br>
 
@@ -400,16 +399,17 @@ OR
 
 <br>
 
-Tools -> Global Options
+Tools -\> Global Options
 
 ![](img/workspace.PNG)
 
 # Restart R often
+
 <br>
 
 ::: columns
 ::: {.column width="48%"}
-Session -> Restart R
+Session -\> Restart R
 
 ![](img/restart.jpg)
 :::
@@ -418,42 +418,37 @@ Session -> Restart R
 :::
 
 ::: {.column width="48%"}
-
-
 Windows
 
-* Ctrl + Shift + F10
+-   Ctrl + Shift + F10
 
 Mac
 
-* Cmd + Shift + 0 
+-   Cmd + Shift + 0
 
-* Cmd + Shift + F10 
-
-
+-   Cmd + Shift + F10
 :::
 :::
 
+## Project intiation: the local case {.smaller}
 
-## Project intiation: the local case
+1.  New folder + make it an RStudio Project
 
-1. New folder + make it an RStudio Project
+-   `usethis::create_project("~/i_am_new")`
 
-* `usethis::create_project("~/i_am_new")`
-
-* RStudio -> New Project... -> New Directory -> New Project
-
-. . .
-
-2. Make existing folder into an RStudio Project
-
-* `usethis::create_project("~/i_exist")`
-
-* RStudio -> New Project... -> Existing Directory
+-   RStudio -\> New Project... -\> New Directory -\> New Project
 
 . . .
 
-::: {.question}
+2.  Make existing folder into an RStudio Project
+
+-   `usethis::create_project("~/i_exist")`
+
+-   RStudio -\> New Project... -\> Existing Directory
+
+. . .
+
+::: question
 Try option 2 now for wtf-explore-libraries.
 :::
 
@@ -471,13 +466,13 @@ countdown(
 
 <br>
 
-relative to a `stable base`
+relative to a [stable base]{.important}
 
 <br>
 
-use `file system functions`
+use [file system functions]{.important}
 
-&nbsp; &nbsp; not paste(), strsplit(), etc.
+    not paste(), strsplit(), etc.
 
 ## Do you know where your files are?
 
@@ -486,17 +481,14 @@ use `file system functions`
 What is a working directory?
 
 ::: notes
-
 Working directory is associated with a specific process or running application.
 
+For a newly launched process or application instance, the working directory (probably? usually?) defaults to user's home directory.
+Or perhaps the application consults a config file to set the working directory at launch time.
+This is sort of how I would describe launching an RStudio Project.
 
-For a newly launched process or application instance, the working directory (probably? usually?) 
-defaults to user’s home directory. Or perhaps the application consults a config file
-to set the working directory at launch time. This is sort of how I would describe launching 
-an RStudio Project. 
-
-“Working directory” as a concept  is not comparable to “home directory”. “Home directory” is a static, persistent thing. 
-
+"Working directory" as a concept is not comparable to "home directory".
+"Home directory" is a static, persistent thing.
 :::
 
 ## tweet example
@@ -511,7 +503,8 @@ install.packages("fs")
 
 `fs` = file path handling
 
-<br>
+<br> 
+
 . . .
 
 ```{r, eval=FALSE, echo=TRUE}
@@ -520,15 +513,555 @@ install.packages("here")
 
 `here` = project-relative paths
 
-## here
+## Examples of a stable base
 
+<brshort> 
+
+Project directory
+
+```{r, echo=TRUE, eval=FALSE}
+here::here("data", "raw-data.csv")
+here::here("data/raw-data.csv")
+```
+
+
+_Automatically complete paths with `Tab`._
+
+<brshort> 
+
+. . .
+
+User's home directory
+
+```{r, echo=TRUE, eval=FALSE}
+file.path("~", ...)
+fs::path_home(...)
+```
+
+. . . 
+
+<brshort> 
+
+Official location for installed software
+
+```{r, echo=TRUE, eval=FALSE}
+library(thingy)
+system.file(..., package = "thingy")
+```
+
+_See example in [gapminder readme](https://github.com/jennybc/gapminder#plain-text-delimited-files)._
+
+::: notes
+
+see where tilde goes with fs::path_expand(file.path("~"))
+
+:::
+
+
+
+
+# Absolute paths
+
+I have nothing against absolute paths.
+
+Some of my best friends are absolute paths!
+
+But don't hard-wire them into your scripts.
+
+Instead, form at runtime relative to a [stable base]{.important}
+
+<brshort>
+
+```{r, echo=TRUE, eval=FALSE}
+> (BAD <- "/Users/shannon/tmp/test.csv")
+[1] "/Users/shannon/tmp/test.csv"
+```
+
+. . .
+
+<brshort>
+
+```{r, echo=TRUE, eval=FALSE}
+> (GOOD <- fs::path_home("tmp/test.csv")
+[1] "/Users/shannon/tmp/test.csv"
+```
+
+
+## Practice safe paths
+
+::: columns
+::: {.column width="50%"}
 ![](img/here.png)
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column .fragment width="46%"}
+* Use the `here` package to build paths inside a project.
+
+* Leave working directory at top-level at all times, during development.
+
+* Absolute paths are formed at runtime.
+:::
+:::
+
 
 ::: footer
 Artwork by [\@allison_horst](https://twitter.com/allison_horst).
 :::
 
 
+## here example
+
+```{r, echo=TRUE, eval=FALSE}
+ggsave(here::here("figs", "built-barchart.png"))
+```
+
+* Works on my machine, works on yours!
+
+* Works even if working directory is in a sub-folder.
+
+* Works for RStudio <ins>**P**</ins>rojects, Git repos, R packages, etc.
+
+* Works with knitr / rmarkdown.
+
+
+## here::here()
+
+The here package is designed to work inside a project, where that could mean:
+
+* RStudio <ins>**P**</ins>roject
+
+* Git repo
+
+* R package
+
+* Folder with a file named .here
+
+`here::here()` does not create directories; that's your job.
+
+## Kinds of paths
+
+
+Absolute path.
+
+```{r, echo=TRUE, eval=FALSE}
+dat <- read.csv("C:/Users/pileggis/Documents/wtf-fix-paths/data/installed-packages.csv")
+```
+
+<br> 
+
+Relative path to working directory, established by the RStudio <ins>**P**</ins>roject.
+
+```{r, echo=TRUE, eval=FALSE}
+dat <- read.csv("data/installed-packages.csv")
+```
+
+<br> 
+
+Relative path within the RStudio <ins>**P**</ins>roject directory.
+
+```{r, echo=TRUE, eval=FALSE}
+dat <- read.csv(here::here("data/installed-packages.csv"))
+```
+
+
+
+## Your turn
+
+<br>
+
+Practice calling `here::here()` in a project <br> to get a feel for it.
+
+<br>
+
+```{r, echo=TRUE, eval=FALSE}
+library(usethis)
+use_course("rstats-wtf/wtf-fix-paths")
+```
+
+<br>
+Read the `README.md` to get started.
+
+
+```{r}
+countdown(
+  minutes = 10
+  )
+```
+
+::: footer
+Having trouble with use_course()?
+
+You can also download from 
+
+<https://github.com/rstats-wtf/wtf-fix-paths>
+:::
+
+
 # Names matter
 
-# File organization
+##  {background-image="img/deep_thoughts.PNG"}
+
+## Names matter
+
+<br>
+
+machine readable
+
+<br>
+
+
+human readable
+
+<br>
+
+
+sort nicely
+
+
+## Example file names
+
+
+::: columns
+::: {.column width="10%"}
+
+<br>
+
+::: r-fit-text
+😔
+:::
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+::: r-fit-text
+😍
+:::
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="86%" .smaller}
+myabstract.docx
+
+Joe’s Filenames Use Spaces and Punctuation.xlsx
+
+figure 1.png
+
+homework1.R
+
+JW7d^(2sl@deletethisandyourcareerisoverWx2*.txt
+
+<br>
+
+2018-01_bryan-abstract-rstudio-conf.docx
+
+joes-filenames-are-getting-better.xlsx
+
+fig01_scatterplot-talk-length-vs-interest.png
+
+bryan_hw01.R
+
+1986-01-28_raw-data-from-challenger-o-rings.txt
+
+:::
+:::
+
+## Names machines like {.smaller}
+
+1. don't leave white space
+
+. . .
+
+2. use letters, numbers, hyphens and underscores... that's it <br> (characters like ^.*?+|$ can have a special meaning)
+
+. . .
+
+3. be consistent with case <br> (some operating systems treat a and A the same, some differently).
+
+. . .
+
+4. use separator characters wisely
+
+
+&nbsp; &nbsp; use underscore `_` to separate different chunks
+
+&nbsp; &nbsp; use hyphen `-` for words in the same chunk
+
+
+. . .
+
+<br>
+ 
+This creates names that are regular expression and globbing friendly, and easy to compute on! 🎉
+ 
+:::footer 
+Adapted from <br> <https://djnavarro.net/slides-project-structure/#1>.
+:::
+
+
+## Names humans like
+
+<br>
+
+name contains info on content
+
+name anticipates context
+
+concept of a slug 🐌 from user-friendly URLs
+
+* 1986-01-28_`raw-data-from-challenger-o-rings`.txt
+
+* concise, meaningful description 
+
+* usually appended to the end
+
+::: notes
+
+Note: A URL slug is the part of the URL after the last backslash - important for keyword SEO
+
+:::
+
+
+## Names that sort nicely
+
+<br>
+
+put something numeric in there
+
+left pad with zeros for constant width, nice sorting, `01`
+
+use the ISO 8601 standard for dates, `YYYY-MM-DD`
+
+order = chronological or ... consider common sense
+
+## ISO 8601
+
+
+::: columns
+::: {.column width="40%"}
+
+![](img/jenny-chicken-broth.PNG)
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="56%" .center-x}
+
+::: r-fit-text
+<br>
+
+YYYY-MM-DD
+
+ISO 8601
+
+:::
+
+<https://www.iso.org/iso-8601-date-and-time-format.html>
+
+:::
+
+:::
+
+
+::: footer
+<https://twitter.com/JennyBryan/status/816143967695687684>
+::: 
+
+
+## Names matter
+
+<br>
+
+machine readable, human readable, and sort nicely
+
+<br>
+
+. . .
+
+easy to implement NOW
+
+<br>
+
+
+payoffs accumulate as your skills evolve and <br> projects get more complex
+
+
+
+# Project structure
+
+## 
+
+### Beware of monoliths
+
+![](img/monolith.jpg)
+
+### Break logic and output into pieces
+
+## Process
+
+![](img/process-naked.jpg)
+
+::: footer
+<https://r4ds.had.co.nz/introduction.html#what-you-will-learn>
+::: 
+
+
+## Project code
+
+
+<br>
+
+::: columns
+::: {.column width="45%"}
+
+
+smell.test.R
+
+wrangle.R
+
+model.R
+
+make-figs.R
+
+report.Rmd
+
+
+:::
+
+::: {.column width="10%"}
+
+<br>
+
+<br>
+
+::: r-fit-text
+
+`>>>`
+
+:::
+
+:::
+
+::: {.column width="45%" .center-x}
+
+
+<br>
+
+<br>
+
+everything.R
+
+
+:::
+
+:::
+
+
+
+## Process and code
+
+![](img/process-script.jpg)
+
+
+## Project code
+
+
+<br>
+
+::: columns
+::: {.column width="45%"}
+
+
+raw-data.xlsx
+
+data.csv
+
+fit.rds
+
+ests.csv
+
+
+:::
+
+::: {.column width="10%"}
+
+<br>
+
+<br>
+
+::: r-fit-text
+
+`>>>`
+
+:::
+
+:::
+
+::: {.column width="45%" .center-x}
+
+
+<br>
+
+<br>
+
+.Rdata
+
+
+:::
+
+:::
+
+
+
+
+## Process and output
+
+![](img/process-out.jpg)
+
+
+## A humane API for analysis
+
+![](img/input-code-output.jpg)
+
+## Your turn
+
+<br>
+
+Create a report that adheres to project organization strategies.
+
+<br>
+
+```{r, echo=TRUE, eval=FALSE}
+library(usethis)
+use_course("rstats-wtf/wtf-packages-report")
+```
+
+<br>
+Read the `README.md` to get started.
+
+
+```{r}
+countdown(
+  minutes = 10
+  )
+```
+
+::: footer
+Having trouble with use_course()?
+
+You can also download from 
+
+<https://github.com/rstats-wtf/wtf-packages-report>
+:::
+
