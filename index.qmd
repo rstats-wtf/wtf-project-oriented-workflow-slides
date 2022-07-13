@@ -154,31 +154,25 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
 ## Your R installation
 
 ::: {.fragment fragment-index="1"}
-
 **R packages**
 
-* the natural unit for distributing R code
-
+-   the natural unit for distributing R code
 :::
 
 ::: {.fragment fragment-index="2"}
-
 **base R**
 
-* 14 base + 15 recommended packages
+-   14 base + 15 recommended packages
 
-* ships with all binary distributions of R
-
+-   ships with all binary distributions of R
 :::
 
 ::: {.fragment fragment-index="3"}
-
 **Have you ever used lattice?**
 
-* it came with your installation
+-   it came with your installation
 
-* `library(lattice)`
-
+-   `library(lattice)`
 :::
 
 ## Additional packages
@@ -194,8 +188,7 @@ library(devtools)
 
 <br>
 
-::: {.fragment}
-
+::: fragment
 **GitHub, ??? packages**
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -206,11 +199,10 @@ library(wtfdbg)
 ```
 
 <brshort>
-
 :::
 
 ::: footer
-we'll use `wtfdbg` later in _Debugging_
+we'll use `wtfdbg` later in *Debugging*
 :::
 
 ## Where do packages live locally?
@@ -232,6 +224,82 @@ All libraries for the current session
 All installed packages
 
 `installed.packages()`
+
+## Syntax aside: pipes
+
+-   2014+ magrittr pipe `%>%`
+
+-   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
+
+2022 Isabella Velásquez Understanding the native R pipe \|\> <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>
+
+. . .
+
+<brshort>
+
+::: columns
+::: {.column width="50%"}
+```{r echo=TRUE, eval=FALSE}
+whatever(arg1, arg2, arg3, ...)
+arg1 |>  
+  whatever(arg2, arg3)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+```{r echo=TRUE, eval=FALSE}
+mean(0:10)
+0:10 |> 
+  mean()
+```
+:::
+:::
+
+::: footer
+Change `CTRL + Shift + M` shortcut to native pipe:
+
+`Tools -> Global Options -> Code ->`
+
+   `Editing -> check Use Native Pipe Operator`
+:::
+
+## Syntax aside: namespacing
+
+`dplyr::select()`
+
+-   tells R explicitly to use the function `select` from the package `dplyr`
+
+-   can help to avoid name conflicts (e.g., `MASS::select()`)
+
+-   does not require `library(dplyr)`
+
+. . .
+
+::: columns
+::: {.column width="45%"}
+```{r echo=TRUE, eval=FALSE}
+library(dplyr)
+select(mtcars, mpg, cyl) 
+mtcars |>  
+  select(mpg, cyl) 
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+```{r echo=TRUE, eval=FALSE}
+# library(dplyr) not needed
+dplyr::select(mtcars, mpg, cyl) 
+mtcars |>  
+  dplyr::select(mpg, cyl) 
+```
+:::
+:::
 
 ## 🧐 Explore your R installation
 
@@ -319,24 +387,22 @@ Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
 <br>
 
 ::: {.fragment fragment-index="1"}
-
-Project-oriented workflow designs this away. 🙌
-
-
+Project-oriented workflow designs this away.
+🙌
 :::
 
 ::: footer
+<https://twitter.com/hadleywickham/status/940021008764846080>
 
 <https://www.tidyverse.org/articles/2017/12/workflow-vs-script/>
 
 <https://rstats.wtf/project-oriented-workflow.html>
-
 :::
 
 ## Which persist after rm(list = ls())?
 
 | Option                               | Persists?                                      |
-|---------------------------------------------------------|---------------|
+|-------------------------------------------------------|-----------------|
 | A. library(dplyr)                    | `r fontawesome::fa("check", fill = "#343838")` |
 | B. summary \<- head                  | `r fontawesome::fa("xmark", fill = "#343838")` |
 | C. options(stringsAsFactors = FALSE) | `r fontawesome::fa("check", fill = "#343838")` |
@@ -353,7 +419,7 @@ countdown(
 ## Which persist after rm(list = ls())?
 
 | Option                               | Persists?                                    |
-|---------------------------------------------------------|---------------|
+|-------------------------------------------------------|-----------------|
 | A. library(dplyr)                    | `r fontawesome::fa("check", fill = fa_fill)` |
 | B. summary \<- head                  | `r fontawesome::fa("xmark", fill = "white")` |
 | C. options(stringsAsFactors = FALSE) | `r fontawesome::fa("check", fill = fa_fill)` |
@@ -462,23 +528,32 @@ countdown(
 
 ##  {background-image="img/deep_thoughts.PNG"}
 
-## Practice "safe paths"
+## On reproducibility of code
 
-<br>
+::: columns
+::: {.column width="50%"}
+![](img/kieran-healy-setwd.PNG)
+:::
 
-relative to a [stable base]{.important}
+::: {.column width="4%"}
+:::
 
-<br>
+::: {.column width="46%"}
+<br> A large-scale study on research code quality and execution.
+<br> Trisovic, A., Lau, M.K., Pasquier, T.
+et al. <br> *Sci Data* **9**, 60 (2022).
+:::
+:::
 
-use [file system functions]{.important}
+::: footer
+<https://twitter.com/kjhealy/status/1514169782060429320> <br> <https://doi.org/10.1038/s41597-022-01143-6>
+:::
 
-    not paste(), strsplit(), etc.
 
 ## Do you know where your files are?
 
 ![](img/street-sign.png)
 
-What is a working directory?
 
 ::: notes
 Working directory is associated with a specific process or running application.
@@ -491,7 +566,18 @@ This is sort of how I would describe launching an RStudio Project.
 "Home directory" is a static, persistent thing.
 :::
 
-## tweet example
+## Practice "safe paths"
+
+<br>
+
+relative to a [stable base]{.important}
+
+<br>
+
+use [file system functions]{.important}
+
+    not paste(), strsplit(), etc.
+
 
 ## Packages with file system functions
 
@@ -503,7 +589,7 @@ install.packages("fs")
 
 `fs` = file path handling
 
-<br> 
+<br>
 
 . . .
 
@@ -515,7 +601,7 @@ install.packages("here")
 
 ## Examples of a stable base
 
-<brshort> 
+<brshort>
 
 Project directory
 
@@ -524,10 +610,9 @@ here::here("data", "raw-data.csv")
 here::here("data/raw-data.csv")
 ```
 
+*Automatically complete paths with `Tab`.*
 
-_Automatically complete paths with `Tab`._
-
-<brshort> 
+<brshort>
 
 . . .
 
@@ -538,9 +623,9 @@ file.path("~", ...)
 fs::path_home(...)
 ```
 
-. . . 
+. . .
 
-<brshort> 
+<brshort>
 
 Official location for installed software
 
@@ -549,16 +634,11 @@ library(thingy)
 system.file(..., package = "thingy")
 ```
 
-_See example in [gapminder readme](https://github.com/jennybc/gapminder#plain-text-delimited-files)._
+*See example in [gapminder readme](https://github.com/jennybc/gapminder#plain-text-delimited-files).*
 
 ::: notes
-
-see where tilde goes with fs::path_expand(file.path("~"))
-
+see where tilde goes with fs::path_expand(file.path("\~"))
 :::
-
-
-
 
 # Absolute paths
 
@@ -586,7 +666,6 @@ Instead, form at runtime relative to a [stable base]{.important}
 [1] "/Users/shannon/tmp/test.csv"
 ```
 
-
 ## Practice safe paths
 
 ::: columns
@@ -598,19 +677,17 @@ Instead, form at runtime relative to a [stable base]{.important}
 :::
 
 ::: {.column .fragment width="46%"}
-* Use the `here` package to build paths inside a project.
+-   Use the `here` package to build paths inside a project.
 
-* Leave working directory at top-level at all times, during development.
+-   Leave working directory at top-level at all times, during development.
 
-* Absolute paths are formed at runtime.
+-   Absolute paths are formed at runtime.
 :::
 :::
-
 
 ::: footer
 Artwork by [\@allison_horst](https://twitter.com/allison_horst).
 :::
-
 
 ## here example
 
@@ -618,31 +695,29 @@ Artwork by [\@allison_horst](https://twitter.com/allison_horst).
 ggsave(here::here("figs", "built-barchart.png"))
 ```
 
-* Works on my machine, works on yours!
+-   Works on my machine, works on yours!
 
-* Works even if working directory is in a sub-folder.
+-   Works even if working directory is in a sub-folder.
 
-* Works for RStudio <ins>**P**</ins>rojects, Git repos, R packages, etc.
+-   Works for RStudio <ins>**P**</ins>rojects, Git repos, R packages, etc.
 
-* Works with knitr / rmarkdown.
-
+-   Works with knitr / rmarkdown.
 
 ## here::here()
 
 The here package is designed to work inside a project, where that could mean:
 
-* RStudio <ins>**P**</ins>roject
+-   RStudio <ins>**P**</ins>roject
 
-* Git repo
+-   Git repo
 
-* R package
+-   R package
 
-* Folder with a file named .here
+-   Folder with a file named .here
 
 `here::here()` does not create directories; that's your job.
 
 ## Kinds of paths
-
 
 Absolute path.
 
@@ -650,7 +725,7 @@ Absolute path.
 dat <- read.csv("C:/Users/pileggis/Documents/wtf-fix-paths/data/installed-packages.csv")
 ```
 
-<br> 
+<br>
 
 Relative path to working directory, established by the RStudio <ins>**P**</ins>roject.
 
@@ -658,15 +733,13 @@ Relative path to working directory, established by the RStudio <ins>**P**</ins>r
 dat <- read.csv("data/installed-packages.csv")
 ```
 
-<br> 
+<br>
 
 Relative path within the RStudio <ins>**P**</ins>roject directory.
 
 ```{r, echo=TRUE, eval=FALSE}
 dat <- read.csv(here::here("data/installed-packages.csv"))
 ```
-
-
 
 ## Your turn
 
@@ -681,9 +754,7 @@ library(usethis)
 use_course("rstats-wtf/wtf-fix-paths")
 ```
 
-<br>
-Read the `README.md` to get started.
-
+<br> Read the `README.md` to get started.
 
 ```{r}
 countdown(
@@ -694,17 +765,68 @@ countdown(
 ::: footer
 Having trouble with use_course()?
 
-You can also download from 
+You can also download from
 
 <https://github.com/rstats-wtf/wtf-fix-paths>
 :::
-
 
 # Names matter
 
 ##  {background-image="img/deep_thoughts.PNG"}
 
+## 
+
+<br>
+
+::: columns
+
+::: {.column .small .hand width="60%"}
+’Tis but thy name that is my enemy;<br>
+Thou art thyself, though not a Montague.<br>
+What’s Montague? It is nor hand, nor foot,<br>
+Nor arm, nor face, nor any other part<br>
+Belonging to a man. O, be some other name!<br>
+[What’s in a name? That which we call a rose]{.important}<br>
+[By any other name would smell as sweet;]{.important}<br>
+So Romeo would, were he not Romeo call’d,<br>
+Retain that dear perfection which he owes<br>
+Without that title. Romeo, doff thy name;<br>
+And for thy name, which is no part of thee,<br>
+Take all myself.
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment .center-x width="35%"}
+This
+
+is
+
+[not]{.important}
+
+[true]{.important}
+
+for 
+
+file 
+
+names.
+:::
+:::
+
+
+
+::: footer
+From Danielle Navarro's _Project Structure_ slides
+
+<https://slides.djnavarro.net/>
+:::
+
 ## Names matter
+
+
 
 <br>
 
@@ -712,53 +834,45 @@ machine readable
 
 <br>
 
-
 human readable
 
 <br>
 
-
 sort nicely
-
 
 ## Example file names
 
-
 ::: columns
 ::: {.column width="10%"}
-
 <br>
 
 ::: r-fit-text
 😔
 :::
-<br>
 
 <br>
 
 <br>
 
-<br>
 
 ::: r-fit-text
 😍
 :::
-
 :::
 
 ::: {.column width="4%"}
 :::
 
-::: {.column width="86%" .smaller}
+::: {.column .small width="86%"}
 myabstract.docx
 
-Joe’s Filenames Use Spaces and Punctuation.xlsx
+Joe's Filenames Use Spaces and Punctuation.xlsx
 
 figure 1.png
 
 homework1.R
 
-JW7d^(2sl@deletethisandyourcareerisoverWx2*.txt
+JW7d\^(2sl\@deletethisandyourcareerisoverWx2\*.txt
 
 <br>
 
@@ -771,42 +885,39 @@ fig01_scatterplot-talk-length-vs-interest.png
 bryan_hw01.R
 
 1986-01-28_raw-data-from-challenger-o-rings.txt
-
 :::
 :::
 
 ## Names machines like {.smaller}
 
-1. don't leave white space
+1.  don't leave white space
 
 . . .
 
-2. use letters, numbers, hyphens and underscores... that's it <br> (characters like ^.*?+|$ can have a special meaning)
+2.  use letters, numbers, hyphens and underscores... that's it <br> (characters like \^.\*?+\|\$ can have a special meaning)
 
 . . .
 
-3. be consistent with case <br> (some operating systems treat a and A the same, some differently).
+3.  be consistent with case <br> (some operating systems treat a and A the same, some differently).
 
 . . .
 
-4. use separator characters wisely
+4.  use separator characters wisely
 
+    use underscore `_` to separate different chunks
 
-&nbsp; &nbsp; use underscore `_` to separate different chunks
-
-&nbsp; &nbsp; use hyphen `-` for words in the same chunk
-
+    use hyphen `-` for words in the same chunk
 
 . . .
 
 <br>
- 
-This creates names that are regular expression and globbing friendly, and easy to compute on! 🎉
- 
-:::footer 
+
+This creates names that are regular expression and globbing friendly, and easy to compute on!
+🎉
+
+::: footer
 Adapted from <br> <https://djnavarro.net/slides-project-structure/#1>.
 :::
-
 
 ## Names humans like
 
@@ -818,18 +929,15 @@ name anticipates context
 
 concept of a slug 🐌 from user-friendly URLs
 
-* 1986-01-28_`raw-data-from-challenger-o-rings`.txt
+-   1986-01-28\_`raw-data-from-challenger-o-rings`.txt
 
-* concise, meaningful description 
+-   concise, meaningful description
 
-* usually appended to the end
+-   usually appended to the end
 
 ::: notes
-
 Note: A URL slug is the part of the URL after the last backslash - important for keyword SEO
-
 :::
-
 
 ## Names that sort nicely
 
@@ -845,38 +953,62 @@ order = chronological or ... consider common sense
 
 ## ISO 8601
 
-
 ::: columns
 ::: {.column width="40%"}
-
 ![](img/jenny-chicken-broth.PNG)
-
 :::
 
 ::: {.column width="4%"}
 :::
 
-::: {.column width="56%" .center-x}
-
+::: {.column .center-x width="56%"}
 ::: r-fit-text
 <br>
 
 YYYY-MM-DD
 
 ISO 8601
-
 :::
 
 <https://www.iso.org/iso-8601-date-and-time-format.html>
-
 :::
-
 :::
-
 
 ::: footer
 <https://twitter.com/JennyBryan/status/816143967695687684>
-::: 
+:::
+
+## 👍 file names {.center-x}
+
+![](img/file-names-01.png)
+
+. . .
+
+Anyone can guess at file's purpose
+
+
+## 👍 file names {.center-x}
+
+![](img/file-names-02.png)
+
+
+Easy to filter in R (or the shell or whatever)
+
+
+## 👍 file names {.center-x}
+
+![](img/file-names-03.png)
+
+Intentional delimiters means meta-data is easily recovered.
+
+`_` delimits fields; `-` delimits words
+
+
+## 👍 file names {.center-x}
+
+![](img/file-names-04.png)
+
+Sorts in the same order as you <br> experience in real life.
 
 
 ## Names matter
@@ -893,20 +1025,13 @@ easy to implement NOW
 
 <br>
 
-
 payoffs accumulate as your skills evolve and <br> projects get more complex
-
-
 
 # Project structure
 
-## 
-
-### Beware of monoliths
+## Break logic and output into pieces
 
 ![](img/monolith.jpg)
-
-### Break logic and output into pieces
 
 ## Process
 
@@ -914,18 +1039,14 @@ payoffs accumulate as your skills evolve and <br> projects get more complex
 
 ::: footer
 <https://r4ds.had.co.nz/introduction.html#what-you-will-learn>
-::: 
-
+:::
 
 ## Project code
-
 
 <br>
 
 ::: columns
-::: {.column width="45%"}
-
-
+::: {.column  width="45%"}
 smell.test.R
 
 wrangle.R
@@ -935,54 +1056,31 @@ model.R
 make-figs.R
 
 report.Rmd
-
-
 :::
 
-::: {.column width="10%"}
-
-<br>
-
-<br>
+::: {.column width="10%" }
 
 ::: r-fit-text
-
 `>>>`
-
 :::
 
 :::
 
-::: {.column width="45%" .center-x}
-
-
-<br>
-
-<br>
-
+::: {.column  width="45%"}
 everything.R
-
-
 :::
-
 :::
-
-
 
 ## Process and code
 
 ![](img/process-script.jpg)
 
-
 ## Project code
-
 
 <br>
 
 ::: columns
 ::: {.column width="45%"}
-
-
 raw-data.xlsx
 
 data.csv
@@ -990,45 +1088,30 @@ data.csv
 fit.rds
 
 ests.csv
-
-
 :::
 
 ::: {.column width="10%"}
-
 <br>
 
 <br>
 
 ::: r-fit-text
-
 `>>>`
-
+:::
 :::
 
-:::
-
-::: {.column width="45%" .center-x}
-
-
+::: {.column .center-x width="45%"}
 <br>
 
 <br>
 
 .Rdata
-
-
 :::
-
 :::
-
-
-
 
 ## Process and output
 
 ![](img/process-out.jpg)
-
 
 ## A humane API for analysis
 
@@ -1047,9 +1130,7 @@ library(usethis)
 use_course("rstats-wtf/wtf-packages-report")
 ```
 
-<br>
-Read the `README.md` to get started.
-
+<br> Read the `README.md` to get started.
 
 ```{r}
 countdown(
@@ -1060,8 +1141,7 @@ countdown(
 ::: footer
 Having trouble with use_course()?
 
-You can also download from 
+You can also download from
 
 <https://github.com/rstats-wtf/wtf-packages-report>
 :::
-
