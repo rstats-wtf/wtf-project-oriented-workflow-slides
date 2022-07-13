@@ -1046,7 +1046,7 @@ payoffs accumulate as your skills evolve and <br> projects get more complex
 <br>
 
 ::: columns
-::: {.column  width="45%"}
+::: {.column  width="30%"}
 smell.test.R
 
 wrangle.R
@@ -1060,14 +1060,18 @@ report.Rmd
 
 ::: {.column width="10%" }
 
+<br>
+
 ::: r-fit-text
 `>>>`
 :::
 
 :::
 
-::: {.column  width="45%"}
-everything.R
+::: {.column  width="35%"}
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; everything.R
 :::
 :::
 
@@ -1080,7 +1084,7 @@ everything.R
 <br>
 
 ::: columns
-::: {.column width="45%"}
+::: {.column width="30%"}
 raw-data.xlsx
 
 data.csv
@@ -1093,14 +1097,13 @@ ests.csv
 ::: {.column width="10%"}
 <br>
 
-<br>
 
 ::: r-fit-text
 `>>>`
 :::
 :::
 
-::: {.column .center-x width="45%"}
+::: {.column .center-x width="30%"}
 <br>
 
 <br>
