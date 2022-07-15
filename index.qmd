@@ -98,33 +98,26 @@ self-explaining `>>>` wordy, needy explainers
 
 ## Be organized
 
-::: columns
+::: {.columns .v-center-container}
 ::: {.column width="45%"}
 ![](img/packages-report-example.png)
 :::
 
 ::: {.column width="10%"}
-<br>
-
-<br>
-
+::: r-fit-text
 `>>>`
+:::
 :::
 
 ::: {.column width="45%"}
-<br>
-
-<br>
-
-file salad <br> + an out of date README
+&nbsp; file salad <br> 
+&nbsp; + an out of date README
 :::
 :::
 
 ## Good enough practices in scientific computing
 
-<br>
-
-::: columns
+::: {.columns .v-center-container}
 ::: {.column width="45%"}
 ![](img/airplane-duct.png)
 :::
@@ -133,17 +126,13 @@ file salad <br> + an out of date README
 :::
 
 ::: {.fragment .column width="53%"}
-*PLOS Computational Biology* (2017)
+*PLOS Computational Biology*
 
-<brshort>
+Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal  (2017)
 
-Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
-
-<brshort>
 
 <https://doi.org/10.1371/journal.pcbi.1005510>
 
-<brshort>
 
 <http://bit.ly/good-enuff>
 :::
@@ -168,7 +157,7 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
 :::
 
 ::: {.fragment fragment-index="3"}
-**Have you ever used lattice?**
+**Have you ever used lattice?** 🤷
 
 -   it came with your installation
 
@@ -176,6 +165,11 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal
 :::
 
 ## Additional packages
+
+<br>
+
+::: {.columns}
+::: {.column width="40%"}
 
 **CRAN, \~18k packages**
 
@@ -185,10 +179,13 @@ install.packages("devtools")
 # attach
 library(devtools)
 ```
+:::
 
-<br>
+::: {.column width="2%"}
+:::
 
-::: fragment
+::: {.column .fragment width="58%"}
+
 **GitHub, ??? packages**
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -197,9 +194,9 @@ devtools::install_github("rstats-wtf/wtfdbg")
 # attach
 library(wtfdbg)
 ```
-
-<brshort>
 :::
+:::
+
 
 ::: footer
 we'll use `wtfdbg` later in *Debugging*
@@ -776,9 +773,8 @@ You can also download from
 
 ## 
 
-<br>
 
-::: columns
+::: {.columns .v-center-container}
 
 ::: {.column .small .hand width="60%"}
 ’Tis but thy name that is my enemy;<br>
@@ -953,7 +949,7 @@ order = chronological or ... consider common sense
 
 ## ISO 8601
 
-::: columns
+::: {.columns .v-center-container}
 ::: {.column width="40%"}
 ![](img/jenny-chicken-broth.PNG)
 :::
@@ -961,10 +957,8 @@ order = chronological or ... consider common sense
 ::: {.column width="4%"}
 :::
 
-::: {.column .center-x width="56%"}
+::: {.column width="56%"}
 ::: r-fit-text
-<br>
-
 YYYY-MM-DD
 
 ISO 8601
@@ -1043,9 +1037,8 @@ payoffs accumulate as your skills evolve and <br> projects get more complex
 
 ## Project code
 
-<br>
 
-::: columns
+::: {.columns .v-center-container}
 ::: {.column  width="30%"}
 smell.test.R
 
@@ -1060,7 +1053,6 @@ report.Rmd
 
 ::: {.column width="10%" }
 
-<br>
 
 ::: r-fit-text
 `>>>`
@@ -1069,8 +1061,6 @@ report.Rmd
 :::
 
 ::: {.column  width="35%"}
-<br>
-<br>
 &nbsp;&nbsp;&nbsp; everything.R
 :::
 :::
@@ -1081,9 +1071,7 @@ report.Rmd
 
 ## Project code
 
-<br>
-
-::: columns
+::: {.columns .v-center-container}
 ::: {.column width="30%"}
 raw-data.xlsx
 
@@ -1095,8 +1083,6 @@ ests.csv
 :::
 
 ::: {.column width="10%"}
-<br>
-
 
 ::: r-fit-text
 `>>>`
@@ -1104,9 +1090,7 @@ ests.csv
 :::
 
 ::: {.column .center-x width="30%"}
-<br>
 
-<br>
 
 .Rdata
 :::
