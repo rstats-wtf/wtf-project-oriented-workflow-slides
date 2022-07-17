@@ -47,7 +47,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 `r fontawesome::fa("check", fill = fa_fill)` R installed?
 Pretty recent?
 
-     Current version 4.2.0
+     Recommended R ≥ 4.2.0
 
 `r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
 
@@ -60,7 +60,7 @@ Pretty recent?
 <br>
 
 ::: {.center-x .r-fit-text}
-What *Did* They Forget <br> to Teach You?
+What [*Did*]{.important} They Forget <br> to Teach You?
 :::
 
 ##  {background-image="img/everything-else.PNG"}
@@ -157,9 +157,9 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal  (2017)
 :::
 
 ::: {.fragment fragment-index="3"}
-**Have you ever used lattice?** 🤷
+**Have you used lattice recently?** 🤷
 
--   it came with your installation
+-   it came with your installation, can use out of the box
 
 -   `library(lattice)`
 :::
@@ -300,7 +300,6 @@ mtcars |>
 
 ## 🧐 Explore your R installation
 
-<br>
 
 ```{r, eval=FALSE, echo=TRUE}
 install.packages("usethis")
@@ -308,11 +307,17 @@ library(usethis)
 use_course("rstats-wtf/wtf-explore-libraries")
 ```
 
-<brshort>
 
+::: {.small}
 Read the `README.md` to get started.
 
-<br>
+* `01_explore-libraries_spartan.R` <br> (directions to explore without suggested code)
+
+* `01_explore-libraries_comfy.R`<br> (directions to explore with suggested code)
+
+* `01_explore-libraries_solution.R`<br> (directions to explore with code solutions)
+:::
+
 
 *Stay relaxed.* 🧘 *We'll be refining this code. Leave rough edges and gaps to address later.*
 
@@ -329,12 +334,15 @@ countdown(
   color_finished_background = "#ffa07a",
   color_finished_text       = "#FFFFFF",
   font_size = "2em",
+  bottom = "50%"
   )
 ```
 
+
+
 ::: footer
-Having trouble with use_course()?\<
-br\> You can also download from <br> <https://github.com/rstats-wtf/wtf-explore-libraries>
+Having trouble with use_course()? You can also download from <br> 
+<https://github.com/rstats-wtf/wtf-explore-libraries>
 :::
 
 # Project-oriented workflows
@@ -499,7 +507,7 @@ Mac
 
 -   `usethis::create_project("~/i_am_new")`
 
--   RStudio -\> New Project... -\> New Directory -\> New Project
+-   File -\> New Project -\> New Directory -\> New Project
 
 . . .
 
@@ -507,7 +515,7 @@ Mac
 
 -   `usethis::create_project("~/i_exist")`
 
--   RStudio -\> New Project... -\> Existing Directory
+-  File -\> New Project -\> Existing Directory
 
 . . .
 
@@ -547,7 +555,7 @@ et al. <br> *Sci Data* **9**, 60 (2022).
 :::
 
 
-## Do you know where your files are?
+## Do you know where<br> your files are?
 
 ![](img/street-sign.png)
 
@@ -766,6 +774,28 @@ You can also download from
 
 <https://github.com/rstats-wtf/wtf-fix-paths>
 :::
+
+## What if my data can't live in my project directory? {.smaller}
+
+1. Are you sure it can't?
+
+2. Review the Good Enough Practices paper for tips.
+
+3. Create a symbolic link to access the data. ([fs::link_create()](https://fs.r-lib.org/reference/create.html), [fs::link_path()](https://fs.r-lib.org/reference/create.html))
+
+4. Put the data in an [R package](https://r-pkgs.org/data.html).
+
+5. Use [pins](https://pins.rstudio.com/).
+
+6. Explore other data warehousing options.
+
+RStudio Community threads:
+
+* [Project-oriented workflow; setwd(), rm(list = ls()) and computer fires](https://community.rstudio.com/t/project-oriented-workflow-setwd-rm-list-ls-and-computer-fires/3549/1)
+
+* [Best way to define paths for a file running on a cron?](https://community.rstudio.com/t/best-way-to-define-paths-for-a-file-running-on-a-cron/2061/7)
+
+
 
 # Names matter
 
@@ -1069,7 +1099,7 @@ report.Rmd
 
 ![](img/process-script.jpg)
 
-## Project code
+## Project artifacts
 
 ::: {.columns .v-center-container}
 ::: {.column width="30%"}
@@ -1096,7 +1126,7 @@ ests.csv
 :::
 :::
 
-## Process and output
+## Process and artifacts
 
 ![](img/process-out.jpg)
 
