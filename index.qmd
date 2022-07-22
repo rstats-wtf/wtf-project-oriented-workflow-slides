@@ -15,6 +15,23 @@ execute:
   freeze: auto
 ---
 
+# Agenda
+
+Getting started
+
+Be organized
+
+Practical Example
+
+Project-oriented workflows
+
+Safe paths
+
+Names matter
+
+Project structure
+
+
 # Getting started
 
 ```{r}
@@ -474,7 +491,7 @@ Tools -\> Global Options
 
 ![](img/workspace.PNG)
 
-# Restart R often
+## Restart R often
 
 <br>
 
@@ -645,7 +662,7 @@ system.file(..., package = "thingy")
 see where tilde goes with fs::path_expand(file.path("\~"))
 :::
 
-# Absolute paths
+## Absolute paths
 
 I have nothing against absolute paths.
 
