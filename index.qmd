@@ -5,6 +5,8 @@ footer:  "[Project oriented workflows]()"
 logo: "img/wtf-logo-square-transparent.png"
 format: 
   revealjs: 
+    height: 900
+    width: 1600
     theme: [night, slides.scss]
     highlight-style: a11y
     transition: fade
@@ -518,21 +520,21 @@ Mac
 :::
 :::
 
-## Project intiation: the local case {.smaller}
+## Project intiation: the local case 
 
 1.  New folder + make it an RStudio Project
 
--   `usethis::create_project("~/i_am_new")`
+* `usethis::create_project("~/i_am_new")`
 
--   File -\> New Project -\> New Directory -\> New Project
+* File -\> New Project -\> New Directory -\> New Project
 
 . . .
 
 2.  Make existing folder into an RStudio Project
 
--   `usethis::create_project("~/i_exist")`
+* `usethis::create_project("~/i_exist")`
 
--  File -\> New Project -\> Existing Directory
+* File -\> New Project -\> Existing Directory
 
 . . .
 
