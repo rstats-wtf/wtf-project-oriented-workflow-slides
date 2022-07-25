@@ -520,7 +520,7 @@ Mac
 :::
 :::
 
-## Project intiation: the local case 
+## Project initiation: the local case 
 
 1.  New folder + make it an RStudio Project
 
