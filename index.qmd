@@ -430,7 +430,7 @@ Project-oriented workflow designs this away.
 | A. library(dplyr)                    | `r fontawesome::fa("check", fill = "#343838")` |
 | B. summary \<- head                  | `r fontawesome::fa("xmark", fill = "#343838")` |
 | C. options(stringsAsFactors = FALSE) | `r fontawesome::fa("check", fill = "#343838")` |
-| D. Sys.setenv(LANGUAGE = "fr)        | `r fontawesome::fa("check", fill = "#343838")` |
+| D. Sys.setenv(LANGUAGE = "fr")        | `r fontawesome::fa("check", fill = "#343838")` |
 | E. x \<- 1:5                         | `r fontawesome::fa("xmark", fill = "#343838")` |
 | F. attach(iris)                      | `r fontawesome::fa("check", fill = "#343838")` |
 
@@ -447,7 +447,7 @@ countdown(
 | A. library(dplyr)                    | `r fontawesome::fa("check", fill = fa_fill)` |
 | B. summary \<- head                  | `r fontawesome::fa("xmark", fill = "white")` |
 | C. options(stringsAsFactors = FALSE) | `r fontawesome::fa("check", fill = fa_fill)` |
-| D. Sys.setenv(LANGUAGE = "fr)        | `r fontawesome::fa("check", fill = fa_fill)` |
+| D. Sys.setenv(LANGUAGE = "fr")        | `r fontawesome::fa("check", fill = fa_fill)` |
 | E. x \<- 1:5                         | `r fontawesome::fa("xmark", fill = "white")` |
 | F. attach(iris)                      | `r fontawesome::fa("check", fill = fa_fill)` |
 
