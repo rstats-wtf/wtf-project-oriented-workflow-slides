@@ -5,8 +5,6 @@ footer:  "[Project oriented workflows]()"
 logo: "img/wtf-logo-square-transparent.png"
 format: 
   revealjs: 
-    height: 900
-    width: 1600
     theme: [night, slides.scss]
     highlight-style: a11y
     transition: fade
@@ -51,14 +49,6 @@ fa_fill <- "#C7B41D"
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
 
-## 
-
-<br> <br>
-
-::: r-fit-text
-[rstd.io/wtf-2022-rsc](https://github.com/rstudio-conf-2022/wtf-rstats)
-:::
-
 ## Checklist
 
 <br>
@@ -66,11 +56,19 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 `r fontawesome::fa("check", fill = fa_fill)` R installed?
 Pretty recent?
 
-     Recommended R ≥ 4.2.0
+     Recommended R ≥ 4.3.0
 
 `r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
 
-     I'm on 2022.02.3+492
+     I'm on 2023.06.1 Build 524
+     
+
+## Resources
+
+<br>
+
+Book: [https://rstats.wtf](https://rstats.wtf/){target="_blank"}
+
 
 # Be organized
 
@@ -176,9 +174,9 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal  (2017)
 :::
 
 ::: {.fragment fragment-index="3"}
-**Have you used lattice recently?** 🤷
+**For example, have you used lattice recently?** 🤷
 
--   it came with your installation, can use out of the box
+-   it came with your R installation, can use out of the box
 
 -   `library(lattice)`
 :::
@@ -190,7 +188,7 @@ Wilson, Bryan, Cranston, Kitzes, Nederbragt, Teal  (2017)
 ::: {.columns}
 ::: {.column width="40%"}
 
-**CRAN, \~18k packages**
+**CRAN, \~20k packages**
 
 ```{r, eval = FALSE, echo = TRUE}
 # install from CRAN
@@ -323,7 +321,11 @@ mtcars |>
 ```{r, eval=FALSE, echo=TRUE}
 install.packages("usethis")
 library(usethis)
+# saves project on desktop by default for most users
 use_course("rstats-wtf/wtf-explore-libraries")
+# use_course("rstats-wtf/wtf-explore-libraries", destdir = "my/new/location")
+# can alternatively download from 
+# https://github.com/rstats-wtf/wtf-explore-libraries
 ```
 
 
@@ -338,8 +340,6 @@ Read the `README.md` to get started.
 :::
 
 
-*Stay relaxed.* 🧘 *We'll be refining this code. Leave rough edges and gaps to address later.*
-
 ```{r}
 countdown(
   minutes = 10,
@@ -353,16 +353,11 @@ countdown(
   color_finished_background = "#ffa07a",
   color_finished_text       = "#FFFFFF",
   font_size = "2em",
-  bottom = "50%"
+  bottom = "30%"
   )
 ```
 
 
-
-::: footer
-Having trouble with use_course()? You can also download from <br> 
-<https://github.com/rstats-wtf/wtf-explore-libraries>
-:::
 
 # Project-oriented workflows
 
@@ -729,7 +724,7 @@ ggsave(here::here("figs", "built-barchart.png"))
 
 ## here::here()
 
-The here package is designed to work inside a project, where that could mean:
+The `here` package is designed to work inside a project, where that could mean:
 
 -   RStudio <ins>**P**</ins>roject
 
@@ -775,7 +770,11 @@ Practice calling `here::here()` in a project <br> to get a feel for it.
 
 ```{r, echo=TRUE, eval=FALSE}
 library(usethis)
+# saves project on desktop by default for most users
 use_course("rstats-wtf/wtf-fix-paths")
+# use_course("rstats-wtf/wtf-fix-paths", destdir = "my/new/location")
+# can alternatively download from 
+# https://github.com/rstats-wtf/wtf-fix-paths
 ```
 
 <br> Read the `README.md` to get started.
@@ -786,13 +785,6 @@ countdown(
   )
 ```
 
-::: footer
-Having trouble with use_course()?
-
-You can also download from
-
-<https://github.com/rstats-wtf/wtf-fix-paths>
-:::
 
 ## What if my data can't live in my project directory? {.smaller}
 
@@ -885,7 +877,11 @@ human readable
 
 sort nicely
 
-## Example file names
+## 
+
+::: question
+What features differentiate 😔 vs 😍?
+:::
 
 ::: columns
 ::: {.column width="10%"}
@@ -931,7 +927,17 @@ bryan_hw01.R
 
 1986-01-28_raw-data-from-challenger-o-rings.txt
 :::
+
+
+
+
 :::
+
+```{r}
+countdown(
+  minutes = 1
+  )
+```
 
 ## Names machines like {.smaller}
 
@@ -1163,7 +1169,11 @@ Create a report that adheres to project organization strategies.
 
 ```{r, echo=TRUE, eval=FALSE}
 library(usethis)
+# saves project on desktop by default for most users
 use_course("rstats-wtf/wtf-packages-report")
+# use_course("rstats-wtf/wtf-packages-report", destdir = "my/new/location")
+# can alternatively download from 
+# https://github.com/rstats-wtf/wtf-packages-report
 ```
 
 <br> Read the `README.md` to get started.
@@ -1174,10 +1184,4 @@ countdown(
   )
 ```
 
-::: footer
-Having trouble with use_course()?
 
-You can also download from
-
-<https://github.com/rstats-wtf/wtf-packages-report>
-:::
