@@ -63,6 +63,11 @@ Pretty recent?
      I'm on 2023.06.1 Build 524
      
 
+`r fontawesome::fa("check", fill = fa_fill)` Packages?
+
+`install.packages(c("tidyverse", "rmarkdown", "usethis", "fs", "here"))`
+
+
 ## Resources
 
 <br>
