@@ -5,6 +5,8 @@ footer:  "[Project oriented workflows]()"
 logo: "img/wtf-logo-square-transparent.png"
 format: 
   revealjs: 
+    height: 900
+    width: 1600
     theme: [night, slides.scss]
     highlight-style: a11y
     transition: fade
@@ -14,22 +16,6 @@ editor: visual
 execute:
   freeze: auto
 ---
-
-# Agenda
-
-Getting started
-
-Be organized
-
-Practical Example
-
-Project-oriented workflows
-
-Safe paths
-
-Names matter
-
-Project structure
 
 
 # Getting started
@@ -75,7 +61,7 @@ Pretty recent?
 Book: [https://rstats.wtf](https://rstats.wtf/){target="_blank"}
 
 
-# Be organized
+
 
 ## 
 
@@ -85,7 +71,25 @@ Book: [https://rstats.wtf](https://rstats.wtf/){target="_blank"}
 What [*Did*]{.important} They Forget <br> to Teach You?
 :::
 
+
 ##  {background-image="img/everything-else.PNG"}
+
+## Learning objectives
+
+1. Establish the concept of the project as the basic organizational unit of work.
+
+2. Apply best practices in and leverage benefits of working in RStudio projects, including
+
+* Creating robust file paths that travel well in time and space.
+
+* Constructing human and machine readable file names that sort nicely.
+
+* Differentiating workflow elements, analysis inputs, and analysis outputs in project structure to create navigable programming interfaces.
+
+* Restarting R frequently, with a blank slate.
+
+
+# Be organized
 
 ##  {background-image="img/deep_thoughts.PNG"}
 
