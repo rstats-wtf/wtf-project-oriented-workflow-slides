@@ -1,5 +1,5 @@
 project:
   type: website
-  title: Version Control
+  title: Project-Oriented Workflow
 execute:
   freeze: auto
