@@ -1,0 +1,5 @@
+project:
+  type: website
+  title: Version Control
+execute:
+  freeze: auto
